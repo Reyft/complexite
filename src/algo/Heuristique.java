@@ -35,6 +35,7 @@ public class Heuristique {
 			for (int i = p.getX(); i < p.getX()+longu-1; i++){
 				for (int j = p.getY(); j < p.getY()+haut-1; j++){
 					b1.getMat()[i][j].setUtilise(true);
+					//ajouter pos du rectangle b2
 				}
 			}
 		return true;
@@ -71,7 +72,7 @@ public class Heuristique {
 		for (Boite b: listeRectangle){
 			int i = 0;
 			while(!ranger(listeBoite.get(i), b)){
-				i++;
+				i = i+1;
 				if (i > listeBoite.size()-1){
 					listeBoite.add(new Boite(x, y));
 				}

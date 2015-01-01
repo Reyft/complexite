@@ -8,15 +8,15 @@ public class Main {
 	public static void main(String[] args) {
 		Boite boite = new Boite (3,3);
 		
-		System.out.println(boite.caseVide().size());
-		
 		ArrayList<Boite> rec = new ArrayList<Boite>();
 		Boite rec1 = new Boite (1,1);
+		Boite rec2 = new Boite (3,3);
 		rec.add(rec1);
+		rec.add(rec2);
 			
 		Heuristique h = new Heuristique(boite, rec);
 		System.out.println(h.algo());
-		System.out.println(boite.caseVide().size());
+		
 	}
 
 }

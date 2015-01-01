@@ -1,1 +1,4 @@
-*.class
+#Eclipse
+/bin/
+.project
+.classpath

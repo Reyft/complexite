@@ -32,6 +32,7 @@ public class Heuristique {
 		if (p.getX() == -1){
 			return false;
 		} else {
+			System.out.println("Dimension du rectangle : "+b2.getHaut()+", "+b2.getLong());
 			for (int i = p.getX(); i < p.getX()+haut; i++){
 				for (int j = p.getY(); j < p.getY()+longu; j++){					
 					b1.utiliseCase(i, j);					

@@ -8,7 +8,9 @@ public class Main {
 
 	private static BufferedReader ficTexte;
 
-	public static void main(String[] args) throws IOException {		
+	public static void main(String[] args) throws IOException {
+		long start; 
+		long duree;
 		int[] tab;
 		ArrayList<Boite> list = new ArrayList<Boite>();
 		Boite b;
@@ -20,7 +22,10 @@ public class Main {
 			}
 			Heuristique h = new Heuristique(b, list);
 			System.out.println("Nombre de rectangle(s) : "+list.size());
+			start = System.nanoTime();
 			System.out.println("Nombre de boite(s) utilisée(s) pour ranger les rectangles : "+h.algo());
+			duree = System.nanoTime() - start;
+			System.out.println("temps d'execution : "+duree+"ns");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
@@ -34,8 +39,7 @@ public class Main {
 //		rec.add(rec2);
 //			
 //		Heuristique h = new Heuristique(boite, rec);
-//		System.out.println(h.algo());
-		
+//		System.out.println(h.algo());		
 	}
 	
 	private static int[] lectFichier() throws IOException{

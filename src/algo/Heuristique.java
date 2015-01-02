@@ -1,12 +1,12 @@
 package algo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 import element.*;
 
 public class Heuristique {
-	private Boite boite;
 	int x;
 	int y;
 	private ArrayList<Boite> listeBoite = new ArrayList<Boite>();
@@ -32,11 +32,12 @@ public class Heuristique {
 		if (p.getX() == -1){
 			return false;
 		} else {
-			for (int i = p.getX(); i < p.getX()+longu-1; i++){
-				for (int j = p.getY(); j < p.getY()+haut-1; j++){
+			for (int i = p.getX(); i < p.getX()+longu; i++){
+				for (int j = p.getY(); j < p.getY()+haut; j++){
 					b1.getMat()[i][j].setUtilise(true);
+					//ajouter pos du rectangle b2
 				}
-			}
+			}	
 		return true;
 		}
 	}
@@ -46,11 +47,11 @@ public class Heuristique {
 		int haut = b2.getHaut();
 		Position p = new Position(-1,0);
 		Case[][] mat = b1.getMat();
-		for (int i = 0; i < b1.getLong()-longu+1; i++){
-			for (int j = 0; i < b1.getHaut()-haut+1; j++){
+		for (int i = 0; i < b1.getLong(); i++){
+			for (int j = 0; j < b1.getHaut(); j++){
 				if (!mat[i][j].utilise()){
 					boolean acc = true;					
-					for (int k = i; k < i+longu; k++){
+					for (int k = i; k < i+longu && k< b1.getLong(); k++){
 						for (int l = j; l < j+haut; l++){
 							if (mat[k][l].utilise()){
 								acc = false;
@@ -71,7 +72,7 @@ public class Heuristique {
 		for (Boite b: listeRectangle){
 			int i = 0;
 			while(!ranger(listeBoite.get(i), b)){
-				i++;
+				i = i+1;
 				if (i > listeBoite.size()-1){
 					listeBoite.add(new Boite(x, y));
 				}

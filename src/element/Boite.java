@@ -3,15 +3,15 @@ package element;
 import java.util.ArrayList;
 
 public class Boite implements Comparable<Boite>{
-	private int longueur;
-	private int hauteur;		
+	private int hauteur;
+	private int longueur;			
 	private Case[][] mat;
 	
 	
 	public Boite(int i, int j){
-		longueur = i;
-		hauteur = j;
-		mat = new Case [longueur][hauteur];
+		hauteur = i;
+		longueur = j;
+		mat = new Case [hauteur][longueur];
 		initPos();
 	}
 	
@@ -20,8 +20,8 @@ public class Boite implements Comparable<Boite>{
 	}
 	
 	private void initPos(){
-		for (int i = 0; i < longueur; i++){
-			for (int j = 0; j < hauteur; j++){
+		for (int i = 0; i < hauteur; i++){
+			for (int j = 0; j < longueur; j++){
 				mat[i][j] = new Case(i, j);
 			}
 		}
@@ -45,6 +45,10 @@ public class Boite implements Comparable<Boite>{
 	
 	public Case[][] getMat(){
 		return mat;
+	}
+	
+	public void utiliseCase(int i, int j){
+		mat[i][j].setUtilise(true);
 	}
 	
 	public ArrayList<Case> caseVide(){

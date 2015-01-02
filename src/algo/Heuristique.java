@@ -15,8 +15,8 @@ public class Heuristique {
 	public Heuristique(Boite b, ArrayList<Boite> list){
 		listeBoite.add(b);
 		listeRectangle = list;
-		x = b.getLong();
-		y = b.getHaut();
+		y = b.getLong();
+		x = b.getHaut();
 		Collections.sort(listeRectangle);
 	}
 	
@@ -28,15 +28,17 @@ public class Heuristique {
 		int longu = b2.getLong();
 		int haut = b2.getHaut();
 		Position p = chercher(b1, b2);
+		System.out.println(p.toString());
 		if (p.getX() == -1){
 			return false;
 		} else {
-			for (int i = p.getX(); i < p.getX()+longu-1; i++){
-				for (int j = p.getY(); j < p.getY()+haut-1; j++){
-					b1.getMat()[i][j].setUtilise(true);
+			for (int i = p.getX(); i < p.getX()+haut; i++){
+				for (int j = p.getY(); j < p.getY()+longu; j++){					
+					b1.utiliseCase(i, j);					
 					//ajouter pos du rectangle b2
 				}
 			}
+			System.out.println(b1.caseVide().size());
 		return true;
 		}
 	}
@@ -46,12 +48,12 @@ public class Heuristique {
 		int haut = b2.getHaut();
 		Position p = new Position(-1,0);
 		Case[][] mat = b1.getMat();
-		for (int i = 0; i < b1.getLong()-longu+1; i++){
-			for (int j = 0; i < b1.getHaut()-haut+1; j++){
+		for (int i = 0; i < b1.getHaut()-haut+1; i++){
+			for (int j = 0; j < b1.getLong()-longu+1; j++){
 				if (!mat[i][j].utilise()){
 					boolean acc = true;					
-					for (int k = i; k < i+longu; k++){
-						for (int l = j; l < j+haut; l++){
+					for (int k = i; k < i+haut; k++){
+						for (int l = j; l < j+longu; l++){
 							if (mat[k][l].utilise()){
 								acc = false;
 							}

@@ -2,10 +2,11 @@ package element;
 
 public class Case {
 	private Position p;
-	private boolean uti = false;
+	private boolean uti;
 	
 	public Case(int x, int y){
 		p = new Position(x, y);
+		uti = false;
 	}
 	
 	public Case(){

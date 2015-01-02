@@ -17,6 +17,7 @@ public class Main {
 		try{
 			tab = lectFichier();
 			b = new Boite(tab[0], tab[1]);
+			System.out.println("\nDimension d'une boite : "+tab[0]+", "+tab[1]+"\n");
 			for (int i = 2; i < tab.length; i+=2){
 				if (tab[i]>0 && tab[i]<=tab[0] && tab[i+1]>0 && tab[i+1]<=tab[1]){
 					list.add(new Boite(tab[i], tab[i+1]));
@@ -25,10 +26,11 @@ public class Main {
 				}
 			}
 			Heuristique h = new Heuristique(b, list);
-			System.out.println("\nNombre de rectangle(s) : "+list.size()+"\n");
+			System.out.println("Nombre de rectangle(s) : "+list.size()+"\n");
 			start = System.currentTimeMillis();
 			System.out.println("Nombre de boite(s) utilisée(s) pour ranger les rectangles : "+h.algo());
 			duree = System.currentTimeMillis() - start;
+			h.affichageRestant();
 			System.out.println("Temps d'execution : "+duree+"ms");
 		} catch (Exception e) {
 			e.printStackTrace();

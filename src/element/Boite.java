@@ -53,8 +53,8 @@ public class Boite implements Comparable<Boite>{
 	
 	public ArrayList<Case> caseVide(){
 		ArrayList<Case> list = new ArrayList<Case>();
-		for (int i = 0; i < longueur; i++){
-			for (int j = 0; j < hauteur; j++){
+		for (int i = 0; i < hauteur; i++){
+			for (int j = 0; j < longueur; j++){
 				if (!mat[i][j].utilise()){
 					list.add(mat[i][j]);
 				}

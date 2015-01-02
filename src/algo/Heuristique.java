@@ -88,4 +88,12 @@ public class Heuristique {
 	public ArrayList<Boite> getBoite(){
 		return listeBoite;
 	}
+
+	public void affichageRestant() {
+		int i = 1;
+		for (Boite b : listeBoite){
+			System.out.println("Il reste dans la boite "+i+" : "+b.caseVide().size()+" case(s) vide(s)");
+			i += 1;
+		}
+	}
 }

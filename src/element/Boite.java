@@ -83,4 +83,5 @@ public class Boite implements Comparable<Boite>{
 			}
 		}
 	}
+
 }

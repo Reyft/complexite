@@ -1,6 +1,7 @@
 package algo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 import element.*;
@@ -38,7 +39,7 @@ public class Heuristique {
 					//ajouter pos du rectangle b2
 				}
 			}
-			System.out.println(b1.caseVide().size());
+			System.out.println(b1.caseVide().size());	
 		return true;
 		}
 	}

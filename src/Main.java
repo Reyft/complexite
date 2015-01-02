@@ -15,7 +15,7 @@ public class Main {
 		try{
 			tab = lectFichier();
 			b = new Boite(tab[0], tab[1]);
-			for (int i = 2; i < tab.length; i = i+2){
+			for (int i = 2; i < tab.length; i+=2){
 				list.add(new Boite(tab[i], tab[i+1]));
 			}
 			Heuristique h = new Heuristique(b, list);

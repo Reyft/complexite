@@ -43,7 +43,7 @@ public class Main {
 	}
 	
 	private static int[] lectFichier() throws IOException{
-		String ligne = "";
+		String ligne = "";	
 		String fichier = "";
 		String sortie = "";
 		int[] result = new int[0];
@@ -69,6 +69,15 @@ public class Main {
 			System.out.println(e.getMessage());
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
+		}for(int i=2 ; i< result.length ; i=i+2){
+			if(result[i] > result[0] ){
+				result[i] = result[0];
+			}
+		}
+		for(int i=3 ; i< result.length ; i=i+2){
+			if(result[i] > result[1] ){
+				result[i] = result[1];
+			}
 		}
 		return result;
 	}

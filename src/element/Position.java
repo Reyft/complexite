@@ -30,6 +30,6 @@ public class Position {
 	}
 	
 	public String toString(){
-		return "pos : "+x+", "+y;
+		return x+", "+y;
 	}
 }

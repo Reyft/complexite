@@ -21,25 +21,14 @@ public class Main {
 				list.add(new Boite(tab[i], tab[i+1]));
 			}
 			Heuristique h = new Heuristique(b, list);
-			System.out.println("Nombre de rectangle(s) : "+list.size());
-			start = System.nanoTime();
+			System.out.println("\nNombre de rectangle(s) : "+list.size()+"\n");
+			start = System.currentTimeMillis();
 			System.out.println("Nombre de boite(s) utilisée(s) pour ranger les rectangles : "+h.algo());
-			duree = System.nanoTime() - start;
-			System.out.println("Temps d'execution : "+duree+"ns");
+			duree = System.currentTimeMillis() - start;
+			System.out.println("Temps d'execution : "+duree+"ms");
 		} catch (Exception e) {
 			e.printStackTrace();
-		}		
-		
-//		Boite boite = new Boite (3,3);
-//		
-//		ArrayList<Boite> rec = new ArrayList<Boite>();
-//		Boite rec1 = new Boite (1,1);
-//		Boite rec2 = new Boite (3,3);
-//		rec.add(rec1);
-//		rec.add(rec2);
-//			
-//		Heuristique h = new Heuristique(boite, rec);
-//		System.out.println(h.algo());		
+		}	
 	}
 	
 	private static int[] lectFichier() throws IOException{

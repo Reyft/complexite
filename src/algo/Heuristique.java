@@ -29,7 +29,6 @@ public class Heuristique {
 		int longu = b2.getLong();
 		int haut = b2.getHaut();
 		Position p = chercher(b1, b2);
-		System.out.println(p.toString());
 		if (p.getX() == -1){
 			return false;
 		} else {
@@ -39,7 +38,7 @@ public class Heuristique {
 					//ajouter pos du rectangle b2
 				}
 			}
-			System.out.println(b1.caseVide().size());	
+			System.out.println("Case(s) restante(s) dans cette boite : "+b1.caseVide().size());	
 		return true;
 		}
 	}
@@ -62,6 +61,7 @@ public class Heuristique {
 					}
 					if (acc){
 						p = new Position(i, j);
+						System.out.println("Position de la première case du rectangle : "+p.toString()+".");
 						return p;
 					}
 				}
@@ -79,6 +79,7 @@ public class Heuristique {
 					listeBoite.add(new Boite(x, y));
 				}
 			}
+			System.out.println("Rectangle rangé dans la boite "+(i+1)+"\n");
 		}
 		return listeBoite.size();
 	}

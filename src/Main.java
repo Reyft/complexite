@@ -19,8 +19,11 @@ public class Main {
 				list.add(new Boite(tab[i], tab[i+1]));
 			}
 			Heuristique h = new Heuristique(b, list);
-			System.out.println(h.algo());
-		} catch (Exception e) {}		
+			System.out.println("Nombre de rectangle(s) : "+list.size());
+			System.out.println("Nombre de boite(s) utilisée(s) pour ranger les rectangles : "+h.algo());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
 		
 //		Boite boite = new Boite (3,3);
 //		

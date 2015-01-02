@@ -6,7 +6,6 @@ import java.util.Collections;
 import element.*;
 
 public class Heuristique {
-	private Boite boite;
 	int x;
 	int y;
 	private ArrayList<Boite> listeBoite = new ArrayList<Boite>();

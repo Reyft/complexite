@@ -50,15 +50,16 @@ public class Heuristique {
 		for (int i = 0; i < b1.getLong(); i++){
 			for (int j = 0; j < b1.getHaut(); j++){
 				if (!mat[i][j].utilise()){
-					boolean acc = true;					
-					for (int k = i; k < i+longu && k< b1.getLong(); k++){
-						for (int l = j; l < j+haut; l++){
+					boolean acc = true;		
+					int k=0,l=0;
+					for ( k = i; k < i+longu && k< b1.getLong(); k++){
+						for ( l = j; l < j+haut && l < b1.getHaut();  l++){
 							if (mat[k][l].utilise()){
 								acc = false;
 							}
 						}
 					}
-					if (acc){
+					if (acc && k-i == longu && l-j ==haut){
 						p = new Position(i, j);
 						return p;
 					}

@@ -26,7 +26,6 @@ public class Main {
 			System.out.println("Nombre de boite(s) utilisée(s) pour ranger les rectangles : "+h.algo());
 			duree = System.nanoTime() - start;
 			System.out.println("Temps d'execution : "+duree+"ns");
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		

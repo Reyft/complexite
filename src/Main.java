@@ -46,6 +46,7 @@ public class Main {
 		System.out.println("Quel est le nom de votre fichier ?");
 		fichier = clavier.readLine();
 		try {
+			
 			ficTexte = new BufferedReader(new FileReader(new File(fichier)));
 			do{
 				ligne = ficTexte.readLine();

@@ -69,14 +69,14 @@ public class Boite implements Comparable<Boite>{
 
 	@Override
 	public int compareTo(Boite b) {
-		if (this.longueur > b.getLong()){
+		if (this.hauteur > b.getHaut()){
 			return -1;
-		} else if (this.longueur < b.getLong()){
+		} else if (this.hauteur < b.getHaut()){
 			return 1;
 		} else {
-			if (this.hauteur > b.getHaut()){
+			if (this.longueur > b.getLong()){
 				return -1;
-			} else if (this.hauteur < b.getHaut()){
+			} else if (this.longueur < b.getLong()){
 				return 1;
 			} else {
 				return 0;
